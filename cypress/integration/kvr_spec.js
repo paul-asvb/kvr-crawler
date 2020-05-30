@@ -1,12 +1,20 @@
+var dayjs = require('dayjs')
+
 describe("KVR", () => {
   it("first month", () => {
     cy.visit("https://www22.muenchen.de/termin/index.php?loc=FS");
     cy.viewport(1200, 1000); // Set viewport to 550px x 750px
-    cy.get(
-      "[href=\"javascript:toggle('Abholung_SPACE_Führerschein');\"] > h3"
+   cy.get(
+      "[href=\"javascript:toggle('Umschreibung_SPACE_eines_SPACE_ausländischen_SPACE_Führerscheins');\"] > h3"
     ).click();
-    cy.get('[name="CASETYPES[FS Abholung Führerschein]"]').select("1");
+    cy.get('[name="CASETYPES[FS Umschreibung Ausländischer FS]"]').select("1");
     cy.get(".WEB_APPOINT_FORWARDBUTTON").click();
-    cy.get('.WEBAPPOINT_LOCATION_CONTENT').screenshot()
+    cy.get(".WEBAPPOINT_LOCATION_CONTENT").screenshot(
+      dayjs().format("MM-DD-HH:mm:ss")
+    );
+    cy.get(".WEBAPPOINT_LOCATION_CONTENT > div > div > .navMonthText").nextAll().eq(0).click()
+    cy.get(".WEBAPPOINT_LOCATION_CONTENT").screenshot(
+      dayjs().format("MM-DD-HH:mm:ss")
+    );
   });
 });
