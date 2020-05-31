@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start":"npm run cy:run && npm run upload",
-    "cy:start": "$(npm bin)/cypress open",
+    "cy:open": "$(npm bin)/cypress open",
     "cy:run": "$(npm bin)/cypress run",
     "upload": "node syncDirS3.js",
     "pupeteer": "node index.js",

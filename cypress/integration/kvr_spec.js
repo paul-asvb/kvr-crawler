@@ -7,9 +7,26 @@ describe("KVR", () => {
     cy.get(
       "[href=\"javascript:toggle('Umschreibung_SPACE_eines_SPACE_ausländischen_SPACE_Führerscheins');\"] > h3"
     ).click();
+    /*cy.get(
+      "[href=\"javascript:toggle('Ortskundeprüfung');\"] > h3"
+    ).click();*/
     cy.get('[name="CASETYPES[FS Umschreibung Ausländischer FS]"]').select("1");
+    //cy.get('[name="CASETYPES[FS Anmeldung und Vereinbarung Prüftermin]"]').select("1");
     cy.get(".WEB_APPOINT_FORWARDBUTTON").click();
-    cy.get(".WEBAPPOINT_LOCATION_CONTENT").screenshot(
+
+    cy.get(".nat_calendar_weekday_bookable").should("not.exist");
+
+    cy.get(".WEBAPPOINT_LOCATION_CONTENT > div > div > .navMonthText")
+      .nextAll()
+      .eq(0)
+      .click();
+
+    //cy.get(".nat_calendar")
+    cy.get(".nat_calendar_weekday_bookable").should("not.exist");
+  });
+});
+
+/*cy.get(".WEBAPPOINT_LOCATION_CONTENT").screenshot(
       dayjs().format(timeString + "-1")
     );
     cy.get(".WEBAPPOINT_LOCATION_CONTENT > div > div > .navMonthText")
@@ -18,6 +35,4 @@ describe("KVR", () => {
       .click();
     cy.get(".WEBAPPOINT_LOCATION_CONTENT").screenshot(
       dayjs().format(timeString + "-2")
-    );
-  });
-});
+    );*/
