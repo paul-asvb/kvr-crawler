@@ -2,10 +2,10 @@ var dayjs = require("dayjs");
 const timeString = "MM-DD-HH:mm:ss";
 describe("KVR", () => {
   it("first month", () => {
-    cy.visit("https://www22.muenchen.de/termin/index.php?loc=FS");
+    cy.visit("https://terminvereinbarung.muenchen.de/bba/termin/?loc=BB");
     cy.viewport(1200, 1000); // Set viewport to 550px x 750px
     cy.get(
-      "[href=\"javascript:toggle('Umschreibung_SPACE_eines_SPACE_ausländischen_SPACE_Führerscheins');\"] > h3"
+      '[href="javascript:toggle(\'Meldeangelegenheiten\');"] > h3'
     ).click();
     /*cy.get(
       "[href=\"javascript:toggle('Ortskundeprüfung');\"] > h3"
