@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: check open appointment for foreign licence
 on:
   schedule:
     - cron: "0 */2 * * *"
