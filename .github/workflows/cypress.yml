@@ -1,7 +1,7 @@
 name: check open appointment for foreign licence
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "5 */2 * * *"
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
