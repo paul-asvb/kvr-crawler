@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ASVBPREAUBV/kvr-crawler#readme",
   "dependencies": {
-    "aws-sdk": "^2.686.0",
+    "aws-sdk": "^2.1354.0",
     "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "nodemailer": "^6.4.8",
